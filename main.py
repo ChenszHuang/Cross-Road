@@ -33,5 +33,5 @@ while game_is_on:
             game_is_on = False
     time.sleep(0.1)
     screen.update()
-
+# dosen menambah perubahan disini
 screen.exitonclick()
