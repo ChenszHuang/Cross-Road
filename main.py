@@ -19,9 +19,10 @@ screen.onkeypress(player.up, "Up")
 
 game_is_on = True
 while game_is_on:
-    chances = random.randint(0, 5)
-    if chances == 5:
-        car.create_car()
+    time.sleep(0.1)
+    screen.update()
+
+    car.create_car()
     car.move()
 
     if player.ycor() > 290:
@@ -29,9 +30,9 @@ while game_is_on:
         score.increment()
         car.increase_speed()
     for c in car.all_car:
-        if player.distance(c.xcor(), c.ycor()) < 19:
+        if player.distance(c) < 20:
+            score.game_over()
             game_is_on = False
-    time.sleep(0.1)
-    screen.update()
+
 
 screen.exitonclick()
