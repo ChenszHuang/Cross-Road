@@ -30,7 +30,9 @@ while game_is_on:
     # collides with car
     for c in car.all_car:
         if player.distance(c) < 20:
+            score.game_over()
             game_is_on = False
+
 
 # dosen menambah perubahan disini
 screen.exitonclick()
