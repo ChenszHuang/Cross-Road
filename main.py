@@ -23,7 +23,7 @@ while game_is_on:
     screen.update()
     car.create_car()
     car.move()
-    if player.ycor() > 290:
+    if player.at_finish_line():
         player.respawn()
         score.increment()
         car.increase_speed()
