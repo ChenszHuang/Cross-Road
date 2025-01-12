@@ -18,3 +18,8 @@ class MyTurtle(Turtle):
 
     def respawn(self):
         self.goto(STARTING_POSITION)
+
+    def at_finish_line(self):
+        if self.ycor() > 290:
+            return True
+        return False
