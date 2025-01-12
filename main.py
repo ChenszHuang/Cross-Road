@@ -23,15 +23,15 @@ while game_is_on:
     screen.update()
     car.create_car()
     car.move()
+    # player reach the finish line
     if player.at_finish_line():
         player.respawn()
         score.increment()
         car.increase_speed()
     # collides with car
-    for c in car.all_car:
-        if player.distance(c) < 20:
-            score.game_over()
-            game_is_on = False
+    if car.check_collision(player):
+        score.game_over()
+        game_is_on = False
 
 
 # dosen menambah perubahan disini

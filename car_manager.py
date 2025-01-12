@@ -38,3 +38,9 @@ class CarManager:
 
     def increase_speed(self):
         self.step += INCREMENT
+
+    def check_collision(self, player):
+        for car in self.all_car:
+            if car.distance(player) < 20:
+                return True
+        return False
